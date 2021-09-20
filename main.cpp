@@ -99,14 +99,13 @@ good to go!
 #include <math.h>
 
 
-///////// FLOAT  ...............
-///////// 
+///////// FLOAT ///////// 
 struct FloatType
 {
-    float add(float lhs, float rhs );
-    float subtract(float lhs, float rhs );
-    float multiply(float lhs, float rhs );
-    float divide(float lhs, float rhs );
+    float add(float lhs, float rhs);
+    float subtract(float lhs, float rhs);
+    float multiply(float lhs, float rhs);
+    float divide(float lhs, float rhs);
 };
 
 float FloatType::add(float lhs, float rhs)
@@ -128,8 +127,7 @@ float FloatType::divide(float lhs, float rhs)
 {
     if ( rhs == 0.f )
     {
-        std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !"<<std::endl;
-        return lhs / rhs;
+        std::cout << std::endl << "warning, floating point division by zero returns 'inf' !" << std::endl;
     }
     return lhs / rhs;
 }
@@ -164,8 +162,7 @@ double DoubleType::divide(double lhs, double rhs)
 {
     if ( rhs == 0.0 )
     {
-        std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
-        return lhs / rhs;
+        std::cout << std::endl <<"warning, floating point division by zero returns 'inf' !" << std::endl;
     }
     return lhs / rhs;
 }
@@ -201,7 +198,7 @@ int IntType::divide(int lhs, int rhs)
 {
     if ( rhs == 0 )
     {
-        std::cout <<"error, integer division by zero will crash the program!\nreturning lhs" <<std::endl;
+        std::cout << "error, integer division by zero will crash the program!\nreturning lhs" <<   std::endl;
         return lhs;
     }
     return lhs / rhs;
