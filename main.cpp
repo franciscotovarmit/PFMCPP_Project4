@@ -103,7 +103,8 @@ good to go!
 
 ///////// FLOAT  ...............
 ///////// 
-class FloatType {
+class FloatType 
+{
     public:
         float lhs, rhs;
         float add(float, float);
@@ -112,77 +113,104 @@ class FloatType {
         float divide(float, float);
 };
 
-float FloatType::add(float a, float b){
-    return(a+b);
+float FloatType::add(float a, float b)
+{
+    return a + b;
 }
-float FloatType::subtract(float a, float b){
-    return(a-b);
+
+float FloatType::subtract(float a, float b)
+{
+    return a - b;
 }
-float FloatType::multiply(float a, float b){
-    return(a*b);
+
+float FloatType::multiply(float a, float b)
+{
+    return a * b;
 }
-float FloatType::divide(float a, float b){
-    if (b<1e-7f && b>-1e-7f){
-std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
-return(a/b);
-    }
-    return(a/b);
+
+float FloatType::divide(float a, float b)
+{
+    if (b<1e-7f && b>-1e-7f)
+        {
+        std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
+            return(a/b);
+        }
+    return a/b;
 }
 
 
 
 ///////// DOUBLE ...............
 ///////// 
-class DoubleType {
+class DoubleType 
+{
     public:
         double add(double, double);
         double subtract(double, double);
         double multiply(double, double);
         double divide(double, double);
 };
-double DoubleType::add(double a, double b){
-    return(a+b);
+
+double DoubleType::add(double a, double b)
+{
+    return a + b;
 }
-double DoubleType::subtract(double a, double b){
-    return(a-b);
+
+double DoubleType::subtract(double a, double b)
+{
+    return a - b;
 }
-double DoubleType::multiply(double a, double b){
-    return(a*b);
+
+double DoubleType::multiply(double a, double b)
+{
+    return a * b;
 }
-double DoubleType::divide(double a, double b){
-    if (b<1e-6 && b>-1e-6){
-std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
-return(a/b);
+double DoubleType::divide(double a, double b)
+{
+    if (b<1e-6 && b>-1e-6)
+    {
+        std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
+    return a/b;
     }
-    return(a/b);
+    return a/b;
 }
 
 
 
 ///////// INT  ...............
 ///////// 
-class IntType {
+class IntType 
+{
     public:
         int add(int, int);
         int subtract(int, int);
         int multiply(int, int);
         int divide(int, int);
 };
-int IntType::add(int a, int b){
-    return(a+b);
+
+int IntType::add(int a, int b)
+{
+    return a + b;
 }
-int IntType::subtract(int a, int b){
-    return(a-b);
+
+int IntType::subtract(int a, int b)
+{
+    return a - b;
 }
-int IntType::multiply(int a, int b){
-    return(a*b);
+
+int IntType::multiply(int a, int b)
+{
+    return a * b;
 }
-int IntType::divide(int a, int b){
-    if (b==0){
-std::cout <<"error, integer division by zero will crash the program!\nreturning lhs" <<std::endl;
-return(a);
+
+int IntType::divide(int a, int b)
+{
+    if (b==0)
+    {
+        std::cout <<"error, integer division by zero will crash the program!\nreturning lhs" <<std::endl;
+    return a;
     }
-    return(a/b);
+    return a/b;
 }
 
 
