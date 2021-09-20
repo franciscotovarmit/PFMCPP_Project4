@@ -3,7 +3,7 @@
  video: Chapter 2 Part 7
  Returning Values tasks 
 
- Create a branch named Part1
+ Create a branch named
 
  Purpose:  This project will take you through the process of writing a class that wraps a numeric type, beginning with writing simple member functions and ending with a fully templated class with lots of functionality. 
  
@@ -92,6 +92,101 @@ good to go!
  */
 
 #include <iostream>
+
+ /*4) make them return the correct primitive type. e.g. if you're implementing the FloatType::add function, your implementation would start like this:
+        float FloatType::add( float lhs, float rhs ) */
+
+#include <math.h>
+#ifdef INFINITY
+#endif
+
+
+///////// FLOAT  ...............
+///////// 
+class FloatType {
+    public:
+        float lhs, rhs;
+        float add(float, float);
+        float subtract(float, float);
+        float multiply(float, float);
+        float divide(float, float);
+};
+
+float FloatType::add(float a, float b){
+    return(a+b);
+}
+float FloatType::subtract(float a, float b){
+    return(a-b);
+}
+float FloatType::multiply(float a, float b){
+    return(a*b);
+}
+float FloatType::divide(float a, float b){
+    if (b<1e-7f && b>-1e-7f){
+std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
+return(a/b);
+    }
+    return(a/b);
+}
+
+
+
+///////// DOUBLE ...............
+///////// 
+class DoubleType {
+    public:
+        double add(double, double);
+        double subtract(double, double);
+        double multiply(double, double);
+        double divide(double, double);
+};
+double DoubleType::add(double a, double b){
+    return(a+b);
+}
+double DoubleType::subtract(double a, double b){
+    return(a-b);
+}
+double DoubleType::multiply(double a, double b){
+    return(a*b);
+}
+double DoubleType::divide(double a, double b){
+    if (b<1e-6 && b>-1e-6){
+std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
+return(a/b);
+    }
+    return(a/b);
+}
+
+
+
+///////// INT  ...............
+///////// 
+class IntType {
+    public:
+        int add(int, int);
+        int subtract(int, int);
+        int multiply(int, int);
+        int divide(int, int);
+};
+int IntType::add(int a, int b){
+    return(a+b);
+}
+int IntType::subtract(int a, int b){
+    return(a-b);
+}
+int IntType::multiply(int a, int b){
+    return(a*b);
+}
+int IntType::divide(int a, int b){
+    if (b==0){
+std::cout <<"error, integer division by zero will crash the program!\nreturning lhs" <<std::endl;
+return(a);
+    }
+    return(a/b);
+}
+
+
+
 int main() 
 {
     FloatType ft;
