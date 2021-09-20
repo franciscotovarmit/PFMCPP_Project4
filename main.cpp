@@ -97,20 +97,17 @@ good to go!
         float FloatType::add( float lhs, float rhs ) */
 
 #include <math.h>
-#ifdef INFINITY
-#endif
 
 
 ///////// FLOAT  ...............
 ///////// 
 struct FloatType 
 {
-    public:
-        float lhs, rhs;
-        float add(float, float);
-        float subtract(float, float);
-        float multiply(float, float);
-        float divide(float, float);
+    float lhs, rhs;
+    float add(float, float);
+    float subtract(float, float);
+    float multiply(float, float);
+    float divide(float, float);
 };
 
 float FloatType::add(float a, float b)
@@ -144,11 +141,10 @@ float FloatType::divide(float a, float b)
 ///////// 
 struct DoubleType 
 {
-    public:
-        double add(double, double);
-        double subtract(double, double);
-        double multiply(double, double);
-        double divide(double, double);
+    double add(double, double);
+    double subtract(double, double);
+    double multiply(double, double);
+    double divide(double, double);
 };
 
 double DoubleType::add(double a, double b)
@@ -181,11 +177,10 @@ double DoubleType::divide(double a, double b)
 ///////// 
 struct IntType 
 {
-    public:
-        int add(int, int);
-        int subtract(int, int);
-        int multiply(int, int);
-        int divide(int, int);
+    int add(int, int);
+    int subtract(int, int);
+    int multiply(int, int);
+    int divide(int, int);
 };
 
 int IntType::add(int a, int b)
