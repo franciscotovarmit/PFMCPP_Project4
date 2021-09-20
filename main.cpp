@@ -103,7 +103,7 @@ good to go!
 
 ///////// FLOAT  ...............
 ///////// 
-class FloatType 
+struct FloatType 
 {
     public:
         float lhs, rhs;
@@ -130,19 +130,19 @@ float FloatType::multiply(float a, float b)
 
 float FloatType::divide(float a, float b)
 {
-    if (b<1e-7f && b>-1e-7f)
+    if ( b == 0.f )
         {
-        std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
-            return(a/b);
+            std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
+            return a / b;
         }
-    return a/b;
+    return a / b;
 }
 
 
 
 ///////// DOUBLE ...............
 ///////// 
-class DoubleType 
+struct DoubleType 
 {
     public:
         double add(double, double);
@@ -167,19 +167,19 @@ double DoubleType::multiply(double a, double b)
 }
 double DoubleType::divide(double a, double b)
 {
-    if (b<1e-6 && b>-1e-6)
+    if ( b == 0.0 )
     {
         std::cout <<std::endl<<"warning, floating point division by zero returns 'inf' !" <<std::endl;
-    return a/b;
+        return a / b;
     }
-    return a/b;
+    return a / b;
 }
 
 
 
 ///////// INT  ...............
 ///////// 
-class IntType 
+struct IntType 
 {
     public:
         int add(int, int);
@@ -205,12 +205,12 @@ int IntType::multiply(int a, int b)
 
 int IntType::divide(int a, int b)
 {
-    if (b==0)
+    if ( b == 0 )
     {
         std::cout <<"error, integer division by zero will crash the program!\nreturning lhs" <<std::endl;
-    return a;
+        return a;
     }
-    return a/b;
+    return a / b;
 }
 
 
