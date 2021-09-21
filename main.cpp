@@ -162,7 +162,7 @@ double DoubleType::divide(double lhs, double rhs)
 {
     if ( rhs == 0.0 )
     {
-        std::cout << std::endl <<"warning, floating point division by zero returns 'inf' !" << std::endl;
+        std::cout << std::endl << "warning, floating point division by zero returns 'inf' !" << std::endl;
     }
     return lhs / rhs;
 }
